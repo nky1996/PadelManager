@@ -1,6 +1,17 @@
-composer.phar
-/vendor/
-
-# Commit your application's lock file https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
-# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
-# composer.lock
+/.web-server-pid
+filmoteca/app/config/parameters.yml
+/build/
+/phpunit.xml
+filmoteca/var/*
+!/var/cache
+filmoteca/var/cache/*
+!var/cache/.gitkeep
+!/var/logs
+/var/logs/*
+!var/logs/.gitkeep
+!/var/sessions
+/var/sessions/*
+!var/sessions/.gitkeep
+!var/SymfonyRequirements.php
+/filmoteca/vendor/
+/filmoteca/web/bundles/

@@ -1,0 +1,20 @@
+<div class="col-3 offset-1  mb65 lineblock">
+    <h6 class="text-center text-title"><b>{{ film.title }}</b></h6>
+        <img class="mb15 col-md-8 offset-2" src="http://image.tmdb.org/t/p/w185/{{ film.poster_path }}">
+        <div class="col-12 mb15">
+            {% if film.raw is defined %}
+            <button class="col-8 offset-2 btn btn-outline-warning">
+                <a href="{{ path('app_user_myaccount_addfavorite',{id: film.id , score: film.vote_average , data : film.raw } ) }}">
+                    <i class="lineblock fa fa-star" aria-hidden="true"></i>
+                    <div class="lineblock">Add to favorites</div>
+                </a>
+            </button>
+            {% endif %}
+        </div>
+        <h6>Overview : </h6>
+        <div class="text-overwiev mb15">
+            <p>{{ film.overview }}</p>
+        </div>
+        <h6> Rating :<b> {{ film.vote_average }} </b> </h6>
+    {% if film.release_date is defined %}<h6> Release Date : <b> {{ film.release_date }} </b></h6> {% endif %}
+</div>

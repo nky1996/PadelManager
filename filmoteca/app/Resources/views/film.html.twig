@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    {% if films is defined and films | length > 0 %}
+        <div class="row">
+            {% include 'film_filter.html.twig' with {selectedPage: selectedPage, pagerCount: pagerCount} %}
+        <div class="row">
+            {% for film in films %}
+               {% include 'film_container.html.twig' with { film : film } %}
+            {% endfor %}
+        </div>
+    {% else %}
+        {% include 'message.html.twig' with { message : 'There is no information associated' } %}
+    {% endif %}
+{% endblock %}

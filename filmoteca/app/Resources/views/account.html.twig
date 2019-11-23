@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    {% if message is defined and message != null %}
+        {% include 'message.html.twig' with {message: message} %}
+    {% endif %}
+    <h3>Your Favorite Films:</h3>
+    <div class="row">
+        {% if favorites is defined and favorites| length > 0 %}
+            {% for film in favorites %}
+                {% include 'film_container.html.twig' with { film : film }%}
+            {% endfor %}
+        {% else %}
+            {% include 'message.html.twig' with { message : 'There is no information associated' } %}
+        {% endif %}
+    </div>
+{% endblock %}

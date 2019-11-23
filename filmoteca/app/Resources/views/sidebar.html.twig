@@ -1,0 +1,22 @@
+<ul class="no-padding">
+{#    <li>#}
+{#        <a href ="{{ path('app_dashboard_home_index') }}">#}
+{#            <i class="fa fa-home" aria-hidden="true"></i>#}
+{#            <p class="lineblock ml15 sidebarFont">Home</p>#}
+{#        </a>#}
+{#    </li>#}
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <li>
+        <a href ="{{ path('app_user_myaccount_index') }}">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <p class="lineblock ml15 sidebarFont">My account</p>
+        </a>
+    </li>
+    {% endif %}
+    <li>
+        <a href ="{{ path('app_film_film_index') }}">
+            <i class="fa fa-film" aria-hidden="true"></i>
+            <p class="lineblock ml15 sidebarFont">Films</p>
+        </a>
+    </li>
+</ul>

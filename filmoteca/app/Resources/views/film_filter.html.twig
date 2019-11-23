@@ -1,0 +1,10 @@
+<div class="col-6 offset-3">
+    <table class="bordered mb65">
+        <tbody>
+        {% for i in 1..pagerCount %}
+            <th colspan="4"><a {% if i != selectedPage %}href="{{ path('app_film_film_index', { page: i }) }}"{% endif %}>{{i}}</a></th>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
